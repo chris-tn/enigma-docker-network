@@ -13,6 +13,8 @@ services:
     tty: true
     volumes:
         - built_contracts:/home/node/enigma-contract/build/contracts
+    ports:
+        - "8545:8545"
 
   surface:
     build: 
@@ -41,6 +43,8 @@ services:
     expose:
       - "5552"
     hostname: enigma_core_${WORKER_INDEX}
+    ports:
+        - "5552-5562:5552"
 
 volumes:
   built_contracts:
