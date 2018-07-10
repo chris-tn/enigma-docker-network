@@ -1,15 +1,15 @@
-##Distributed Dev Workflow
+## Distributed Dev Workflow
 
-###Background
+### Background
 
 Many developers can't enable SGX on their workstation. While a hosted SGX environment is available, actively developing on it can be a handicap. This workflow makes some compromises by hosting Core and Ganache remotely, allowing developers to run and debug Dapp code locally without the SGX drivers. 
 
-###Definitions
+### Definitions
 
 - R: The remote server with the SGX drivers
 - L: The local workstation
 
-###Prerequisites
+### Prerequisites
 
 - R: Install the SGX driver and SDK
 - R: Clone the Docker Network: `git clone https://github.com/enigmampc/enigma-docker-network` => distributed_dev branch
@@ -17,7 +17,7 @@ Many developers can't enable SGX on their workstation. While a hosted SGX enviro
 - L: Clone the Engima Contract: `git clone https://github.com/enigmampc/enigma-contract` => truffle-next branch
 - L: Clone Surface : `git clone https://github.com/enigmampc/surface` => develop branch
 
-###Steps:
+### Steps:
 
 1. R: Edit the `docker-compose.yml` file to open ports for Ganache and Core. For core, use a range of ports for the different instances: https://github.com/docker/compose/pull/4649
 2. R: Boot the Contract container: `docker-compose up contract`
