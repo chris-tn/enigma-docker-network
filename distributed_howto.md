@@ -15,8 +15,8 @@ Many developers can't enable SGX on their workstation. While a hosted SGX enviro
 - R: Clone the Docker Network: `git clone https://github.com/enigmampc/enigma-docker-network` => distributed_dev branch
 - R: Build the `contract` and `core` docker container: `docker-compose build contract` and `docker-compose build core`
 - R: Whitelist a range of ports reserved for your development. You'll need one port for Ganache an one port per instance of Core. I recommend reserving a range of 10 ports.  
-- L: Clone the Engima Contract: `git clone https://github.com/enigmampc/enigma-contract` => truffle-next branch
-- L: Clone Surface : `git clone https://github.com/enigmampc/surface` => develop branch
+- L: Clone the Engima Contract: `git clone https://github.com/enigmampc/enigma-contract` => `develop` branch
+- L: Clone Surface : `git clone https://github.com/enigmampc/surface` => `develop` branch
 
 ### Steps:
 
