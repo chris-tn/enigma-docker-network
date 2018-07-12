@@ -13,6 +13,7 @@ Many developers can't enable SGX on their workstation. While a hosted SGX enviro
 
 - R: Install the SGX driver and SDK
 - R: Clone the Docker Network: `git clone https://github.com/enigmampc/enigma-docker-network` => distributed_dev branch
+- R: Build the `contract` and `core` docker container: `docker-compose build contract` and `docker-compose build core`
 - R: Whitelist a range of ports reserved for your development. You'll need one port for Ganache an one port per instance of Core. I recommend reserving a range of 10 ports.  
 - L: Clone the Engima Contract: `git clone https://github.com/enigmampc/enigma-contract` => truffle-next branch
 - L: Clone Surface : `git clone https://github.com/enigmampc/surface` => develop branch
@@ -27,6 +28,6 @@ Many developers can't enable SGX on their workstation. While a hosted SGX enviro
 6. L: Deploy the Enigma contracts from source: `./deploy-ganache.sh ganache_remote`
 7. L: Run the Coin Mixer script: `node coin-mixer.js --url=http://host:port`, where host and port map the `ganache_remote` config
 8. L: In Surface, edit `src/surface/config.json` to specify the Core host and ports  
-9. L: Run `__main.py --dev-account=n`, where n is the account index mapped to the worker (avoid account 9 as it is reserved for the principal node). This will connect to Core, get an Intel report and register the worker
+9. L: Run `__main.py --dev-account=n --ipc-connstr=host:port --provider-url=http://host:port`, where n is the account index mapped to the worker (avoid account 9 as it is reserved for the principal node). This will connect to Core, get an Intel report and register the worker
 10. L: Check the logs of the `coin-mixer.js` script, you should see a new Register event followed by a new Task dispatched to the worker
 11. L: Repeat steps 9 and 10 for each new worker
