@@ -4,7 +4,7 @@ ARGF=""
 SRFD=""
 
 echo "Launching the contract service"
-docker-compose up contract
+docker-compose up contract &
 
 CONTRACT_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' enigma_contract_1)
 while :
