@@ -5,7 +5,7 @@ LABEL maintainer='info@enigma.co'
 RUN apt-get update && apt-get install -y nmap
 
 WORKDIR /root
-RUN git clone https://github.com/enigmampc/surface.git
+RUN git clone -b develop --single-branch https://github.com/enigmampc/surface.git
 
 WORKDIR /root
 RUN cd surface && \

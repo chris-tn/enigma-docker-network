@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y sudo net-tools
 
 USER node
 WORKDIR /home/node
-RUN git clone https://github.com/enigmampc/enigma-contract.git
+RUN git clone -b develop --single-branch https://github.com/enigmampc/enigma-contract.git
 
 WORKDIR /home/node/enigma-contract
 
