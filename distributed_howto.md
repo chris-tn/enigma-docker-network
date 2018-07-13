@@ -27,7 +27,6 @@ Many developers can't enable SGX on their workstation. While a hosted SGX enviro
 6. L: Configure `truffle.js` to set the `ganache_remote` host and port
 6. L: Deploy the Enigma contracts from source: `./deploy-ganache.sh ganache_remote`
 7. L: Run the Coin Mixer script: `node coin-mixer.js --url=http://host:port`, where host and port map the `ganache_remote` config
-8. L: In Surface, edit `src/surface/config.json` to specify the Core host and ports  
-9. L: Run `__main.py --dev-account=n --ipc-connstr=host:port --provider-url=http://host:port`, where n is the account index mapped to the worker (avoid account 9 as it is reserved for the principal node). This will connect to Core, get an Intel report and register the worker
-10. L: Check the logs of the `coin-mixer.js` script, you should see a new Register event followed by a new Task dispatched to the worker
-11. L: Repeat steps 9 and 10 for each new worker
+8. L: Run `__main.py --dev-account=n --ipc-connstr=host:port --provider-url=http://host:port`, where n is the account index mapped to the worker (avoid account 9 as it is reserved for the principal node). This will connect to Core, get an Intel report and register the worker
+9. L: Check the logs of the `coin-mixer.js` script, you should see a new Register event followed by a new Task dispatched to the worker
+10. L: Repeat steps 9 and 10 for each new worker
