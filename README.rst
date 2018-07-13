@@ -42,7 +42,22 @@ running:
 
 ``$ docker-compose build``
 
-Then, you launch the ``Enigma Docker Network`` by running either: 
+Individual Scripts
+------------------
+
+To launch individual components of the ``Enigma Docker Network`` using multiple scripts, run the following:
+
+1- Open a terminal window
+2- Start the blockchain (i.e. start Ganache + deploy the Enigma contracts)
+3- [Recommended] To test the network, we provide a node.js script which emulates a Coin Mixer Dapp:
+4- Launch a worker:
+5- Repeat step 4 to launch more workers
+
+
+Unified Script
+--------------
+
+To launch the ``Enigma Docker Network`` using a single unified script, running either: 
 
 * ``$ ./launch_network.bash`` (everything condensed in one single terminal)
 
