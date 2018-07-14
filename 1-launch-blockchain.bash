@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-ARGF=""
-SRFD=""
+if [[ "$DEVELOP" -eq 1 ]]; then
+    echo "Launching the blockchain in development mode..."
+    ARGF="-f docker-compose.develop.yml"
+    SRFD="~/wrapper-develop.bash &&"
+else
+    ARGF=""
+    SRFD=""
+fi
 
 echo "Launching the contract service"
 docker-compose up contract &
