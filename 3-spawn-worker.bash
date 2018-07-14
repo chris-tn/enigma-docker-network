@@ -9,7 +9,7 @@ else
     SRFD=""
 fi
 
-docker-compose $ARGF up core surface &
+docker-compose $ARGF up surface &
 
 sleep 5
 docker-compose exec surface bash -c "$SRFD ./wait_launch.bash" &
