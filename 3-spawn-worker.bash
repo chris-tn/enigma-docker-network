@@ -11,8 +11,10 @@ fi
 
 if [ "$1" != "" ]; then
     NUM_WORKERS=$1
-    docker-compose $ARGF up --scale core=$NUM_WORKERS core &
     docker-compose $ARGF up --scale surface=$NUM_WORKERS surface &
+    sleep 1
+    docker-compose $ARGF up --scale core=$NUM_WORKERS core &
+    sleep 1
 
     if [ $NUM_WORKERS -gt 1 ]; then
     	for i in $(seq 2 $NUM_WORKERS); do
