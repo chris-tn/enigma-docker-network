@@ -30,7 +30,7 @@ services:
         - built_contracts:/var/lib/built_contracts
         - ./surface/wait_launch.bash:/root/wait_launch.bash:ro
         - ./surface/docker_config.bash:/root/docker_config.bash:ro
-    hostname: enigma_surface_${WORKER_INDEX}
+    hostname: '{{.Node.Hostname}}'
     networks:
         - net
 
@@ -46,7 +46,7 @@ services:
       - "/dev/isgx:/dev/isgx"
     expose:
       - "5552"
-    hostname: enigma_core_${WORKER_INDEX}
+    hostname: '{{.Node.Hostname}}'
     networks:
       - net
 
