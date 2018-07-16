@@ -3,7 +3,7 @@ FROM baiduxlab/sgx-rust:1.0.0 as runtime
 LABEL maintainer='info@enigma.co'
 
 WORKDIR /root
-RUN git clone https://github.com/enigmampc/enigma-core.git
+RUN git clone -b develop --single-branch https://github.com/enigmampc/enigma-core.git
 
 # clone the rust-sgx-sdk baidu sdk v1.0.0
 RUN rm -rf /root/sgx
